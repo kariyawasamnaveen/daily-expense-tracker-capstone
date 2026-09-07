@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'expense_service.dart';
-import 'budget_service.dart';
-import 'auth_service.dart';
+import '../services/expense_service.dart';
+import '../services/budget_service.dart';
+import '../services/auth_service.dart';
 import 'package:provider/provider.dart';
-import 'expense_detail.dart';
-import 'currency_service.dart';
-import 'local_storage_service.dart';
+import '../screens/expense_detail.dart';
+import '../services/currency_service.dart';
+import '../services/local_storage_service.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -14,6 +14,12 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  String _getGreeting() {
+    final hour = DateTime.now().hour;
+    if (hour < 12) return 'GOOD MORNING';
+    if (hour < 17) return 'GOOD AFTERNOON';
+    return 'GOOD EVENING';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +104,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'GOOD EVENING',
+                                        _getGreeting(),
                                         style: TextStyle(
                                           color: Color(0xFF7A7D78),
                                           fontSize: 10,

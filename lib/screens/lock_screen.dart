@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
-import 'local_storage_service.dart';
-import 'main_layout.dart';
+import '../services/local_storage_service.dart';
+import '../screens/main_layout.dart';
 
 class LockScreen extends StatefulWidget {
   @override

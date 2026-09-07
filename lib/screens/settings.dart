@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:provider/provider.dart';
-import 'auth_service.dart';
-import 'expense_service.dart';
-import 'currency_service.dart';
-import 'local_storage_service.dart';
-import 'currency_rates.dart';
-import 'notifications.dart';
-import 'theme_provider.dart';
-import 'main.dart';
+import '../services/auth_service.dart';
+import '../services/expense_service.dart';
+import '../services/currency_service.dart';
+import '../services/local_storage_service.dart';
+import '../screens/currency_rates.dart';
+import '../screens/notifications.dart';
+import '../providers/theme_provider.dart';
+import '../main.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -155,36 +155,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 14),
-
-              // ── PREMIUM PLAN CARD ──
-              Container(
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: isDark ? Color(0xFF1E6E43).withValues(alpha: 0.15) : Color(0xFFEDF5EE),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Color(0xFF1E6E43).withValues(alpha: 0.15), width: 1),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(color: Color(0xFF1E6E43), shape: BoxShape.circle),
-                      child: Icon(Icons.flash_on, color: Colors.white, size: 16),
-                    ),
-                    SizedBox(width: 14),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Premium Plan', style: TextStyle(color: Color(0xFF1E6E43), fontWeight: FontWeight.bold, fontSize: 14)),
-                        SizedBox(height: 2),
-                        Text('Renews June 1, 2026 · \$4.99/mo', style: TextStyle(color: Color(0xFF2E7D52), fontSize: 12)),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 28),
 
               // ── ACCOUNT SECTION ──
               _sectionLabel('ACCOUNT'),
@@ -298,9 +268,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               SizedBox(height: 14),
 
-              Center(
-                child: Text('Daily Expense Tracker v2.4.1 · Build 20260524', style: TextStyle(color: Colors.grey[400], fontSize: 11)),
-              ),
+
             ],
           ),
         ),

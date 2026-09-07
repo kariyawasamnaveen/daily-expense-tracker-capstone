@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'favorite_service.dart';
-import 'expense_service.dart';
-import 'constants/app_categories.dart';
-import 'utils/app_snackbar.dart';
+import 'package:provider/provider.dart';
+import '../services/favorite_service.dart';
+import '../services/expense_service.dart';
+import '../services/currency_service.dart';
+import '../constants/app_categories.dart';
+import '../utils/app_snackbar.dart';
 
 class FavoritesScreen extends StatefulWidget {
   @override
@@ -11,7 +13,10 @@ class FavoritesScreen extends StatefulWidget {
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
-  final currencyFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 0);
+  NumberFormat get currencyFormat => NumberFormat.currency(
+    symbol: Provider.of<CurrencyService>(context).currencySymbol, 
+    decimalDigits: 0
+  );
   String _searchQuery = '';
 
   // For the bottom sheet Add form
@@ -94,7 +99,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       controller: _amountCtrl,
                       keyboardType: TextInputType.numberWithOptions(decimal: true),
                       decoration: InputDecoration(
-                        hintText: 'Amount (\$)',
+                        hintText: 'Amount (${Provider.of<CurrencyService>(context, listen: false).currencySymbol})',
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide.none),

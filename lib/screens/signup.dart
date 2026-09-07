@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'auth_service.dart';
-import 'login.dart';
-import 'utils/app_snackbar.dart';
+import '../services/auth_service.dart';
+import '../screens/login.dart';
+import '../utils/app_snackbar.dart';
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -34,7 +34,7 @@ class _SignupScreenState extends State<SignupScreen> {
     final phone = phoneController.text.trim();
     final password = passwordController.text.trim();
 
-    if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
+    if (name.isEmpty || email.isEmpty || password.isEmpty) {
       _showError("Please fill in all fields");
       return;
     }

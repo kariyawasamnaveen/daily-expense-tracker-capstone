@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dashboard.dart';
-import 'budget_config.dart';
-import 'favorites.dart';
-import 'settings.dart';
-import 'log_expense.dart';
+import '../screens/dashboard.dart';
+import '../screens/budget_config.dart';
+import '../screens/favorites.dart';
+import '../screens/settings.dart';
+import '../screens/log_expense.dart';
 
 class MainLayout extends StatefulWidget {
   final int initialIndex;

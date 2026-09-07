@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'local_storage_service.dart';
-import 'notification_service.dart';
+import '../services/local_storage_service.dart';
+import '../services/notification_service.dart';
 
 class NotificationsScreen extends StatefulWidget {
   @override

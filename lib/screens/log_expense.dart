@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'expense_service.dart';
-import 'main_layout.dart';
-import 'constants/app_categories.dart';
-import 'utils/app_snackbar.dart';
+import 'package:provider/provider.dart';
+import '../services/expense_service.dart';
+import '../screens/main_layout.dart';
+import '../constants/app_categories.dart';
+import '../utils/app_snackbar.dart';
+import '../services/currency_service.dart';
+import '../utils/app_snackbar.dart';
 
 class LogExpenseScreen extends StatefulWidget {
   @override
@@ -102,6 +105,8 @@ class _LogExpenseScreenState extends State<LogExpenseScreen> {
   // ── Build ──────────────────────────────────────────────────────────────────
   @override
   Widget build(BuildContext context) {
+    final currencySymbol = Provider.of<CurrencyService>(context).currencySymbol;
+
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F3),
       appBar: AppBar(
@@ -141,7 +146,7 @@ class _LogExpenseScreenState extends State<LogExpenseScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('\$', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
+                      Text(currencySymbol, style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
                       SizedBox(width: 4),
                       IntrinsicWidth(
                         child: TextField(

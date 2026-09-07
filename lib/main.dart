@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'auth_service.dart';
-import 'login.dart';
-import 'main_layout.dart';
-import 'lock_screen.dart';
-import 'local_storage_service.dart';
+import 'services/auth_service.dart';
+import 'screens/login.dart';
+import 'screens/main_layout.dart';
+import 'screens/lock_screen.dart';
+import 'services/local_storage_service.dart';
 import 'package:provider/provider.dart';
-import 'theme_provider.dart';
-import 'currency_service.dart';
-import 'notification_service.dart';
+import 'providers/theme_provider.dart';
+import 'services/currency_service.dart';
+import 'services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'local_storage_service.dart';
+import '../services/local_storage_service.dart';
 
 /// Central authentication & user profile service.
 /// All screens should use this class instead of calling FirebaseAuth directly.

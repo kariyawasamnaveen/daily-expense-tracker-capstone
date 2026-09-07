@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:csv/csv.dart';
-import 'auth_service.dart';
-import 'constants/app_categories.dart';
+import '../services/auth_service.dart';
+import '../constants/app_categories.dart';
 
 /// Model class for a single expense record.
 class ExpenseModel {
@@ -193,6 +193,6 @@ class ExpenseService {
       ]);
     }
 
-    return const ListToCsvConverter().convert(rows);
+    return csv.encode(rows);
   }
 }

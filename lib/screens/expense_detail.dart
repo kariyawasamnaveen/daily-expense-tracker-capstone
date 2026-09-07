@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'expense_service.dart';
+import 'package:provider/provider.dart';
+import '../services/expense_service.dart';
+import '../services/currency_service.dart';
 
 class ExpenseDetailScreen extends StatelessWidget {
   final ExpenseModel expense;
@@ -9,7 +11,8 @@ class ExpenseDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currencyFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 2);
+    final symbol = Provider.of<CurrencyService>(context).currencySymbol;
+    final currencyFormat = NumberFormat.currency(symbol: symbol, decimalDigits: 2);
     final dateFormat = DateFormat('EEEE, d MMMM yyyy · h:mm a');
 
     return Scaffold(

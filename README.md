@@ -1,13 +1,75 @@
-# Daily Expense & Budget Tracker
+# Daily Expense Tracker
 
-## User Stories
+A modern, feature-rich daily expense tracking application built with Flutter and Firebase. This app allows users to easily log expenses, track budgets, manage frequent favorites, and monitor spending across different categories. 
 
-1. **Signup Page:** As a user, I want to create an account with my email and password so that my financial data is securely stored.
-2. **Login Page:** As a user, I want to log in to my account securely so that I can access my personal expense records.
-3. **Home Page:** As a user, I want to see a summary of my daily and monthly expenses on the home screen so that I know my current financial status at a glance.
-4. **Detail Page:** As a user, I want to add a new expense with a category, amount, and date, and view the specific details later, so that I can track exactly where my money goes.
-5. **Favorites/Profile Page:** As a user, I want to mark certain frequent expenses as "Favorites" and save them using local storage so that I can quickly add them next time.
-6. **Settings Menu:** As a user, I want a settings menu that allows me to navigate to different configuration options for personalization.
-7. **Settings Screen:** As a user, I want to set a monthly budget limit in the settings screen so that I can control my spending habits.
-8. **Notifications Screen:** As a user, I want to receive and configure an alert notification when I exceed my monthly budget limit so that I can stop overspending.
-9. **External API Integration:** As a user, I want to view live currency exchange rates from an external API so that I can accurately calculate expenses while traveling.
+<div align="center">
+  <img src="https://via.placeholder.com/200x400.png?text=Dashboard" alt="Dashboard" width="200" />
+  <img src="https://via.placeholder.com/200x400.png?text=Log+Expense" alt="Log Expense" width="200" />
+  <img src="https://via.placeholder.com/200x400.png?text=Budgets" alt="Budgets" width="200" />
+</div>
+
+## ✨ Features
+
+- **User Authentication:** Secure email/password login and sign up.
+- **Biometric Lock:** Secure your app with fingerprint or FaceID authentication via `local_auth`.
+- **Expense Logging:** Quickly add expenses with amount, category, payment method, and notes.
+- **Favorites:** Save frequent expenses (like coffee or subscriptions) to log them quickly in the future.
+- **Budget Tracking:** Set custom budgets per category and monitor your spending limits visually.
+- **Live Currency Conversion:** Support for multiple currencies (USD, LKR, EUR, GBP, AUD, INR) fetching live rates from [Exchange Rate API](https://open.er-api.com).
+- **Data Export:** Export your entire expense history directly to a CSV file.
+- **Customizable Appearance:** Toggle between Light and Dark themes to suit your preference.
+
+## 🛠 Tech Stack
+
+- **Framework:** Flutter / Dart
+- **Backend Services:** Firebase Authentication, Cloud Firestore
+- **State Management:** `Provider`
+- **Local Storage:** `SharedPreferences` for user settings (currency, theme, biometrics)
+- **Security:** `local_auth` for biometrics
+- **External API:** `http` package fetching from open.er-api.com
+- **Utilities:** `intl` for currency/date formatting, `csv` for data export
+
+## 🏗 Architecture
+
+The codebase follows a modular organization designed for scalability and separation of concerns:
+
+- `screens/` - Contains all the UI pages (e.g., Dashboard, Login, Settings).
+- `services/` - Houses backend interactions, business logic, and API calls (e.g., `ExpenseService`, `AuthService`).
+- `providers/` - Manages reactive app state (e.g., `ThemeProvider`).
+- `constants/` & `utils/` - Shared static data (categories/icons) and reusable UI utilities (custom Snackbars).
+- `models/` - Prepared for future data model extraction.
+- `widgets/` - Prepared for future standalone reusable widget extraction.
+
+## 🚀 Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/kariyawasamnaveen/daily-expense-tracker-capstone.git
+cd daily-expense-tracker-capstone
+```
+
+### 2. Install Dependencies
+```bash
+flutter pub get
+```
+
+### 3. Firebase Configuration
+> [!IMPORTANT]
+> **Security Note:** Never commit your real `google-services.json` or `GoogleService-Info.plist` files. These files are excluded in `.gitignore` for a reason to prevent leaking your API keys.
+
+To run the app, you need to connect it to your own Firebase project:
+1. Create a project in the [Firebase Console](https://console.firebase.google.com/).
+2. Enable **Authentication** (Email/Password) and **Firestore Database**.
+3. **Android:** Download your `google-services.json` and place it in the `android/app/` directory (refer to the provided `android/app/google-services.json.example`).
+4. **iOS:** Download your `GoogleService-Info.plist` and place it in the `ios/Runner/` directory (refer to the provided `ios/Runner/GoogleService-Info.plist.example`).
+
+### 4. Run the App
+```bash
+flutter run
+```
+
+## ⚠️ Known Limitations & Planned Improvements
+
+- **Folder Structure Checkpoints:** The `models/` and `widgets/` directories have been prepared during the architecture refactor, but currently remain unpopulated. Future updates will extract inline models and deep widget trees into these folders.
+- **Lint Warnings:** While there are no analyzer errors, there are some remaining minor lint warnings (e.g., deprecated `withOpacity` methods) that are slated for cleanup in the next patch.
+- **Error Handling:** Enhanced error handling and offline-caching (Firestore offline persistence is enabled by default, but UI feedback during network drops can be improved).

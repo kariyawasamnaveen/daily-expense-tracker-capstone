@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'auth_service.dart';
-import 'signup.dart';
-import 'utils/app_snackbar.dart';
+import '../services/auth_service.dart';
+import '../screens/signup.dart';
+import '../utils/app_snackbar.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

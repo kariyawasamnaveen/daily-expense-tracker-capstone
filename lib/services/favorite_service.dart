@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'auth_service.dart';
-import 'constants/app_categories.dart';
+import '../services/auth_service.dart';
+import '../constants/app_categories.dart';
 
 class FavoriteModel {
   final String? id;

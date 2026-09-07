@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'currency_service.dart';
+import '../services/currency_service.dart';
 
 class CurrencyRatesScreen extends StatelessWidget {
   @override

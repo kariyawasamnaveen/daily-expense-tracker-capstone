@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'budget_service.dart';
-import 'expense_service.dart';
-import 'constants/app_categories.dart';
+import 'package:provider/provider.dart';
+import '../services/budget_service.dart';
+import '../services/expense_service.dart';
+import '../services/currency_service.dart';
+import '../constants/app_categories.dart';
 
 class BudgetConfigScreen extends StatefulWidget {
   @override
@@ -10,7 +12,10 @@ class BudgetConfigScreen extends StatefulWidget {
 }
 
 class _BudgetConfigScreenState extends State<BudgetConfigScreen> {
-  final currencyFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 0);
+  NumberFormat get currencyFormat => NumberFormat.currency(
+    symbol: Provider.of<CurrencyService>(context).currencySymbol,
+    decimalDigits: 0
+  );
 
   /// Generic dialog for editing any budget limit (total or per-category).
   Future<void> _showBudgetEditDialog(String title, double currentLimit, Future<void> Function(double) onSave) async {
@@ -238,6 +243,8 @@ class _BudgetConfigScreenState extends State<BudgetConfigScreen> {
     int spentInt = spent.toInt();
     int totalInt = limit.toInt();
 
+    final symbol = Provider.of<CurrencyService>(context, listen: false).currencySymbol;
+
     return GestureDetector(
       onTap: () => _showBudgetEditDialog(
         '$name Budget',
@@ -267,10 +274,10 @@ class _BudgetConfigScreenState extends State<BudgetConfigScreen> {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: '\$$spentInt ',
+                    text: '$symbol$spentInt ',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.black87),
                     children: [
-                      TextSpan(text: '/ \$$totalInt', style: TextStyle(color: Colors.grey[400], fontWeight: FontWeight.normal, fontSize: 12)),
+                      TextSpan(text: '/ $symbol$totalInt', style: TextStyle(color: Colors.grey[400], fontWeight: FontWeight.normal, fontSize: 12)),
                     ],
                   ),
                 ),

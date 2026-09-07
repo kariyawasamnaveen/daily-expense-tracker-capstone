@@ -3,11 +3,38 @@
 A modern, feature-rich daily expense tracking application built with Flutter and Firebase. This app allows users to easily log expenses, track budgets, manage frequent favorites, and monitor spending across different categories. 
 
 <div align="center">
-  <img src="https://via.placeholder.com/200x400.png?text=Dashboard" alt="Dashboard" width="200" />
-  <img src="https://via.placeholder.com/200x400.png?text=Log+Expense" alt="Log Expense" width="200" />
-  <img src="https://via.placeholder.com/200x400.png?text=Budgets" alt="Budgets" width="200" />
+  <video src="https://github.com/user-attachments/assets/b75a3476-487e-4815-a954-03fd795977b7" width="400"></video>
 </div>
 
+## 📸 Screenshots
+
+### Key Screens
+| Dashboard | Log Expense | Expense Detail |
+| :---: | :---: | :---: |
+| <img src="screenshots/dashboard.png" width="200" /> | <img src="screenshots/log_expense.png" width="200" /> | <img src="screenshots/expense_detail.png" width="200" /> |
+
+| Favorites | Currency Rates | Settings (Dark) |
+| :---: | :---: | :---: |
+| <img src="screenshots/favorites.png" width="200" /> | <img src="screenshots/currency_rates.png" width="200" /> | <img src="screenshots/settings_dark.png" width="200" /> |
+
+<details>
+<summary><b>View More Screenshots & Quick Highlight Reel</b></summary>
+<br>
+
+| Empty Dashboard | Dashboard (Income) | Dashboard (LKR) |
+| :---: | :---: | :---: |
+| <img src="screenshots/dashboard_empty.png" width="200" /> | <img src="screenshots/dashboard_income.png" width="200" /> | <img src="screenshots/dashboard_lkr.png" width="200" /> |
+
+| Log Income | Settings (Light) | |
+| :---: | :---: | :---: |
+| <img src="screenshots/log_income.png" width="200" /> | <img src="screenshots/settings_light.png" width="200" /> | |
+
+<br>
+<div align="center">
+  <h3>Quick Highlight Reel</h3>
+  <video src="https://github.com/user-attachments/assets/2e0b46d5-9c4e-4eb8-90ab-63e0ee66c39e" width="300"></video>
+</div>
+</details>
 ## ✨ Features
 
 - **User Authentication:** Secure email/password login and sign up.

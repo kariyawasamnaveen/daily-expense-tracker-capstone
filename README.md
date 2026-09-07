@@ -2,9 +2,7 @@
 
 A modern, feature-rich daily expense tracking application built with Flutter and Firebase. This app allows users to easily log expenses, track budgets, manage frequent favorites, and monitor spending across different categories. 
 
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/b75a3476-487e-4815-a954-03fd795977b7" width="400"></video>
-</div>
+https://github.com/user-attachments/assets/b75a3476-487e-4815-a954-03fd795977b7
 
 ## 📸 Screenshots
 
@@ -30,10 +28,11 @@ A modern, feature-rich daily expense tracking application built with Flutter and
 | <img src="screenshots/log_income.png" width="200" /> | <img src="screenshots/settings_light.png" width="200" /> | |
 
 <br>
-<div align="center">
-  <h3>Quick Highlight Reel</h3>
-  <video src="https://github.com/user-attachments/assets/2e0b46d5-9c4e-4eb8-90ab-63e0ee66c39e" width="300"></video>
-</div>
+
+**Quick Highlight Reel**
+
+https://github.com/user-attachments/assets/2e0b46d5-9c4e-4eb8-90ab-63e0ee66c39e
+
 </details>
 ## ✨ Features
 
